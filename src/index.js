@@ -98,8 +98,6 @@ app.put('/api/update/user', (req, res) => {
     const userEmail = req.body.email;
     // const userToken = req.body.token;
 
-//UPDATE `user` SET `password` = 'admin321' WHERE `user`.`id` = 2; 
-
     const sqlQuery = "UPDATE user SET password = ? WHERE email = ?";
     db.query(sqlQuery, [userPassword, userEmail], (err, result) =>{
         if(err){
