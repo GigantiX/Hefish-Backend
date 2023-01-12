@@ -92,7 +92,7 @@ function makeid(length) {
     return result;
 }
 
-//update
+//update data user
 app.put('/api/update/user', (req, res) => {
     const userPassword = req.body.password;
     const userEmail = req.body.email;
