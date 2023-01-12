@@ -5,9 +5,6 @@ var options = {
     password: process.env.DB_PASS,
     database: process.env.DB_DATABASE,
 }
-
 const db = mysql.createPool(options);
 console.log(options);
-
-
 exports.db = db;
