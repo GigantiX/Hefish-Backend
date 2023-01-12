@@ -124,6 +124,6 @@ app.delete('/api/delete/user', (req, res) =>{
     });
 });
 
-app.listen(3000, ()=> {
+app.listen(process.env.PORT, ()=> {
     console.log('Server port 8080 works!');
 });
