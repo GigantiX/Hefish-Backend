@@ -25,6 +25,19 @@ app.get('/api/read-data', (req, res) => {
     });
 });
 
+//read fishes
+app.get('/api/read-fishes', (req, res) => {
+    const sqlQuery = "SELECT * FROM fishes";
+
+    db.query(sqlQuery, (err, result)=> {
+        if(err){
+            console.log(err);
+        }else{
+            res.send(result);
+            console.log(result);
+        }
+    });
+});
 
 app.get('/api/read-user/:email', (req, res) => {
     const userEmail = req.params.email;
@@ -124,9 +137,9 @@ app.delete('/api/delete/user', (req, res) =>{
     });
 });
 
-// app.listen(3000, ()=> {
-//     console.log('Server port 8080 works!');
-// });
+app.listen(8080, ()=> {
+    console.log('Server port 8080 works!');
+});
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
